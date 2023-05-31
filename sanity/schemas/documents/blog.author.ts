@@ -15,5 +15,13 @@ export default defineType({
 			name: 'image',
 			type: 'image',
 		}),
-	]
+		defineField({
+			name: 'slug',
+			type: 'slug',
+			options: {
+				source: 'name',
+			},
+			validation: (Rule) => Rule.required(),
+		}),
+	],
 })

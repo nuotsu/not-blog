@@ -10,7 +10,8 @@ export default defineType({
 			type: 'slug',
 			options: {
 				source: (doc: any) => doc.metadata?.title || doc.title,
-			}
+			},
+			validation: Rule => Rule.required(),
 		}),
 		defineField({
 			name: 'title',
@@ -22,6 +23,10 @@ export default defineType({
 			type: 'text',
 			rows: 3,
 			validation: (Rule) => Rule.max(160).required(),
+		}),
+		defineField({
+			name: 'image',
+			type: 'image',
 		}),
 	]
 })
