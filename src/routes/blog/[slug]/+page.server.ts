@@ -1,6 +1,6 @@
 import { client } from '$utils/sanity'
 import groq from 'groq'
-import type { PageServerLoad } from '../$types'
+import type { PageServerLoad } from './$types'
 
 export const load = (async ({ params }) => {
 	const { slug } = params as { slug: string }
