@@ -15,4 +15,4 @@ export const client = createClient({
 
 const builder = imageUrlBuilder(config)
 
-export const urlFor = (image?: Sanity.Image) => image && builder.image(image)
+export const urlFor = (image?: Sanity.Image) => image && builder.image(image).auto('format')
