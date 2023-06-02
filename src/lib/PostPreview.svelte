@@ -2,7 +2,7 @@
 	{#if post.metadata.image}
 		<figure>
 			<img
-				src={urlFor(post.metadata.image)?.height(200).url()}
+				src={urlFor(post.metadata.image)?.height(300).url()}
 				alt={post.metadata.title}
 				loading="lazy"
 				draggable={false}
