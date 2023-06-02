@@ -31,15 +31,18 @@ export default defineType({
 			name: 'category',
 			type: 'reference',
 			to: [{ type: 'blog.category' }],
+			validation: Rule => Rule.required(),
 		}),
 		defineField({
 			name: 'author',
 			type: 'reference',
 			to: [{ type: 'blog.author' }],
+			validation: Rule => Rule.required(),
 		}),
 		defineField({
 			name: 'date',
 			type: 'date',
+			validation: Rule => Rule.required(),
 		}),
 		defineField({
 			name: 'metadata',

@@ -20,6 +20,7 @@ declare global {
 		}
 
 		interface BlogCategory {
+			_id: string
 			name: string
 			slug: {
 				current: string
