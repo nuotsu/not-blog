@@ -1,3 +1,5 @@
+import { type SanityImageSource } from '@sanity/image-url/lib/types/types'
+
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
@@ -17,6 +19,7 @@ declare global {
 			author: BlogAuthor
 			date: string
 			metadata: Metadata
+			contentString?: string
 		}
 
 		interface BlogCategory {
@@ -37,7 +40,7 @@ declare global {
 
 		// objects
 
-		interface Image extends SanityImage {
+		interface Image extends SanityImageObject {
 			alt?: string
 			caption?: string
 		}

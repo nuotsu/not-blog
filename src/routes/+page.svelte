@@ -1,24 +1,27 @@
-<nav class="grow flex flex-wrap items-center justify-center gap-4 p-4 text-xl">
+<nav class="grow flex flex-wrap items-center justify-center gap-2 py-12 px-4 text-xl">
+	<button
+		class="px-[1em] rounded-full border border-transparent hover:border-current"
+		class:active={!selectedCategory?._id}
+		on:click={() => selectedCategory = undefined}
+	>
+		All
+	</button>
+
 	{#each categories as category}
 		<button
+			class="px-[1em] rounded-full border border-transparent hover:border-current"
 			class:active={selectedCategory?._id === category?._id}
-			on:click={() => onclick(category)}
+			on:click={() => selectedCategory = category}
 		>
 			{category.name}
 		</button>
 	{/each}
 </nav>
 
-<ul class="grid gap-px pt-px bg-current">
+<ul class="grid gap-px items-stretch pt-px bg-current">
 	{#each filteredPosts as post}
-		<li class="py-2 px-4 bg-white">
-			<a class="grid gap-2" href="/blog/{post.metadata.slug.current}">
-				<p class="text-xs">{post.category.name}</p>
-				<h2>{post.metadata.title}</h2>
-				<p class="text-xs">
-					<Date date={post.date} />
-				</p>
-			</a>
+		<li class="bg-white">
+			<PostPreview {post} />
 		</li>
 	{/each}
 </ul>
@@ -31,11 +34,12 @@
 	.active {
 		background-color: #000;
 		color: #fff;
+		border: 1px solid;
 	}
 </style>
 
 <script lang="ts">
-	import Date from '$lib/Date.svelte'
+	import PostPreview from '$lib/PostPreview.svelte'
 
 	export let data
 
@@ -43,12 +47,4 @@
 	let selectedCategory: Sanity.BlogCategory | undefined
 
 	$: filteredPosts = posts.filter(post => !selectedCategory?._id || post.category._id === selectedCategory._id)
-
-	function onclick(c: Sanity.BlogCategory) {
-		if (c._id === selectedCategory?._id) {
-			selectedCategory = undefined
-		} else {
-			selectedCategory = c
-		}
-	}
 </script>

@@ -10,7 +10,8 @@ export const load = (async ({ params }) => {
 			*[_type == 'blog.post' && metadata.slug.current == $slug][0]{
 				...,
 				category->,
-				author->
+				author->,
+				'contentString': pt::text(content)
 			}
 		`, { slug }),
 	}

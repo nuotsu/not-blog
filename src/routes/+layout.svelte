@@ -1,6 +1,6 @@
 <header class="sticky top-0 p-4 border-b border-current bg-white/90 backdrop-blur">
 	<h1>
-		<a href="/">
+		<a href="/" class="hover:link">
 			{title}
 		</a>
 	</h1>
@@ -11,7 +11,8 @@
 </main>
 
 <footer class="p-4 border-t border-current text-center text-xs">
-	&copy; {new Date().getFullYear()} {title}
+	&copy; {new Date().getFullYear()} {title} |
+	<a class="hover:link" href="https://github.com/nuotsu" target="_blank" rel="noopener noreferrer">nuotsu</a>
 </footer>
 
 <style>
@@ -26,5 +27,5 @@
 <script>
 	import '../styles/app.css'
 
-	const title = 'Not Blog'
+	const title = '🤷‍♂️ Not Blog'
 </script>

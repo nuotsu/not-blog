@@ -1,9 +1,11 @@
 import { defineField, defineType } from 'sanity'
 import { IoIosImages } from 'react-icons/io'
+import { VscEdit } from 'react-icons/vsc'
 
 export default defineType({
 	name: 'blog.post',
 	title: 'Blog post',
+	icon: VscEdit,
 	type: 'document',
 	fields: [
 		defineField({
@@ -53,6 +55,7 @@ export default defineType({
 		select: {
 			title: 'metadata.title',
 			subtitle: 'category.name',
+			media: 'metadata.image',
 		},
 	}
 })

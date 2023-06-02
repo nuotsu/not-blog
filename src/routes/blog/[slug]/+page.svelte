@@ -3,39 +3,59 @@
 	<meta name="description" content={post.metadata.description}>
 </svelte:head>
 
-<article class="grid gap-4 p-4">
-	<h1 class="font-bold">{post.metadata.title}</h1>
+<article>
+	{#if post.metadata.image}
+		<figure>
+			<img
+				class="w-full max-h-[60vh] object-cover"
+				src={urlFor(post.metadata.image)?.url()}
+				alt={post.metadata.title}
+				loading="eager"
+				draggable={false}
+			/>
+		</figure>
+	{/if}
 
-	<p class="text-xs">
-		<a href="/category/{post.category.slug.current}">
-			{post.category.name}
-		</a>
+	<div class="grid gap-4 py-12 px-4 max-w-screen-md mx-auto">
+		<header class="grid gap-4 mb-4">
+			<h1 class="text-3xl font-bold">{post.metadata.title}</h1>
 
-		<span class="mx-1">|</span>
+			<p class="text-xs">
+				<a class="hover:link" href="/category/{post.category.slug.current}">
+					{post.category.name}
+				</a>
+				<span class="mx-1">|</span>
 
-		<span>By <a href="/author/{post.author.slug.current}">{post.author.name}</a></span>
+				<span>By <a class="hover:link" href="/author/{post.author.slug.current}">{post.author.name}</a></span>
+				<span class="mx-1">|</span>
 
-		<span class="mx-1">|</span>
+				<Date date={post.date} />
+				<span class="mx-1">|</span>
 
-		<Date date={post.date} />
-	</p>
+				<span>{readTime} min read</span>
+			</p>
+		</header>
 
-	<PortableText
-		value={post.content}
-		components={{
-			block: {
-				blockquote: Quote,
-			}
-		}}
-	/>
+		<PortableText
+			value={post.content}
+			components={{
+				block: {
+					blockquote: Quote,
+				}
+			}}
+		/>
+	</div>
 </article>
 
 <script lang="ts">
 	import { PortableText } from '@portabletext/svelte'
 	import Date from '$lib/Date.svelte'
 	import Quote from '$lib/Quote.svelte'
+    import { urlFor } from '$utils/sanity.js';
 
 	export let data
 
 	const { post } = data
+
+	const readTime = Math.ceil((post.contentString?.split(' ').length || 0) / 200)
 </script>
