@@ -21,7 +21,7 @@
 			<h1 class="text-3xl font-bold">{post.metadata.title}</h1>
 
 			<p class="text-xs">
-				<a class="hover:link" href="/category/{post.category.slug.current}">
+				<a class="hover:link" href="/?category={post.category.slug.current}">
 					{post.category.name}
 				</a>
 				<span class="mx-1">|</span>
