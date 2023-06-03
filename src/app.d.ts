@@ -1,3 +1,4 @@
+import type { SanityDocument } from '@sanity/client'
 import { type SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 // See https://kit.svelte.dev/docs/types#app
@@ -13,7 +14,12 @@ declare global {
 	namespace Sanity {
 		// documents
 
-		interface BlogPost {
+		interface Site extends SanityDocument {
+			name: string
+			description: string
+		}
+
+		interface BlogPost extends SanityDocument {
 			content: any
 			category: BlogCategory
 			author: BlogAuthor
@@ -22,15 +28,14 @@ declare global {
 			contentString?: string
 		}
 
-		interface BlogCategory {
-			_id: string
+		interface BlogCategory extends SanityDocument {
 			name: string
 			slug: {
 				current: string
 			}
 		}
 
-		interface BlogAuthor {
+		interface BlogAuthor extends SanityDocument {
 			name: string
 			image?: Image
 			slug: {
