@@ -1,5 +1,5 @@
 <header
-	class="sticky top-0 p-4 border-b border-current bg-white/90 backdrop-blur"
+	class="sticky top-0 p-4 border-y border-current bg-white/90 backdrop-blur"
 	bind:this={elem}
 >
 	<h1>
