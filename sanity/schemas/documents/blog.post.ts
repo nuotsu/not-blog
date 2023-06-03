@@ -27,6 +27,7 @@ export default defineType({
 						}),
 					]
 				},
+				{ type: 'cta' },
 			],
 		}),
 		defineField({

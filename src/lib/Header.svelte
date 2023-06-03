@@ -3,15 +3,14 @@
 	bind:this={elem}
 >
 	<h1>
-		<a href="/" class="hover:link">
-			{title}
+		<a href="/" class="group flex items-center gap-3">
+			<i class="inline-block scale-150 not-italic">🤷‍♂️</i>
+			<span class="group-hover:link">Not Blog</span>
 		</a>
 	</h1>
 </header>
 
 <script lang="ts">
-	export let title: string
-
 	let elem: HTMLElement
 
 	$: {

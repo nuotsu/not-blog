@@ -47,6 +47,9 @@
 					},
 					marks: {
 						link: Link,
+					},
+					types: {
+						cta: CTA,
 					}
 				}}
 			/>
@@ -61,6 +64,7 @@
 	import Heading from '$lib/pt/Heading.svelte'
 	import Quote from '$lib/pt/Quote.svelte'
 	import Link from '$lib/pt/Link.svelte'
+	import CTA from '$lib/pt/CTA.svelte'
 
 	export let data
 

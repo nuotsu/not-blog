@@ -21,10 +21,44 @@
 }
 
 @layer components {
+	._btn {
+		display: inline-block;
+		padding: .25em 1em;
+		line-height: 1.3;
+		@apply rounded-full border;
+	}
+
+	.action {
+		@apply _btn bg-black text-white border-black;
+	}
+
 	.link {
 		text-decoration: underline;
 		text-decoration-style: wavy;
 		text-decoration-thickness: .5px;
 		text-underline-offset: 2px;
+	}
+}
+
+@layer utilities {
+	.full-width {
+		width: 100vw;
+		margin-inline: calc(50% - 50vw);
+	}
+
+	.dots {
+		--size: 1rem;
+		--move: var(--size);
+		background-image: radial-gradient(currentColor 1px, transparent 1px);
+		background-size: var(--size) var(--size);
+		animation: move 1s linear infinite;
+	}
+	.dots:has(.action:hover) {
+		animation-duration: .15s;
+	}
+	@keyframes move {
+		to {
+			background-position: var(--size) calc(var(--size) * -1);
+		}
 	}
 }

@@ -1,6 +1,6 @@
 <nav class="grow flex flex-wrap items-center justify-center gap-2 py-12 px-4 text-xl">
 	<button
-		class="px-[1em] rounded-full border border-transparent hover:border-current"
+		class="_btn border-transparent hover:border-current"
 		class:active={!$selectedCategory}
 		on:click={() => onclick()}
 	>
@@ -9,7 +9,7 @@
 
 	{#each categories as category}
 		<button
-			class="px-[1em] rounded-full border border-transparent hover:border-current"
+			class="_btn border-transparent hover:border-current"
 			class:active={$selectedCategory === category.slug.current}
 			on:click={() => onclick(category)}
 		>
