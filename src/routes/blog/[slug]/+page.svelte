@@ -36,22 +36,31 @@
 			</p>
 		</header>
 
-		<PortableText
-			value={post.content}
-			components={{
-				block: {
-					blockquote: Quote,
-				}
-			}}
-		/>
+		<div class="grid gap-[1em]">
+			<PortableText
+				value={post.content}
+				components={{
+					block: {
+						h2: Heading,
+						h3: Heading,
+						blockquote: Quote,
+					},
+					marks: {
+						link: Link,
+					}
+				}}
+			/>
+		</div>
 	</div>
 </article>
 
 <script lang="ts">
-	import { PortableText } from '@portabletext/svelte'
+	import { urlFor } from '$utils/sanity.js'
 	import Date from '$lib/Date.svelte'
-	import Quote from '$lib/Quote.svelte'
-    import { urlFor } from '$utils/sanity.js';
+	import { PortableText } from '@portabletext/svelte'
+	import Heading from '$lib/pt/Heading.svelte'
+	import Quote from '$lib/pt/Quote.svelte'
+	import Link from '$lib/pt/Link.svelte'
 
 	export let data
 

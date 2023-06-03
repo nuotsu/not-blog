@@ -1,10 +1,4 @@
-<header class="sticky top-0 p-4 border-b border-current bg-white/90 backdrop-blur">
-	<h1>
-		<a href="/" class="hover:link">
-			{title}
-		</a>
-	</h1>
-</header>
+<Header {title} />
 
 <main class="grow flex flex-col">
 	<slot></slot>
@@ -25,6 +19,7 @@
 </style>
 
 <script>
+	import Header from '$lib/Header.svelte'
 	import '../styles/app.css'
 
 	const title = '🤷‍♂️ Not Blog'

@@ -1,4 +1,4 @@
-<a class="group h-full flex flex-col justify-center" href="/blog/{post.metadata.slug.current}">
+<a class="group h-full flex flex-col" href="/blog/{post.metadata.slug.current}">
 	{#if post.metadata.image}
 		<figure>
 			<img
@@ -10,7 +10,7 @@
 		</figure>
 	{/if}
 
-	<div class="grid gap-2 py-2 px-4">
+	<div class="grid gap-2 py-2 px-4 my-auto">
 		<p class="text-xs">{post.category.name}</p>
 		<h2 class="leading-snug group-hover:link">{post.metadata.title}</h2>
 		<p class="text-xs">

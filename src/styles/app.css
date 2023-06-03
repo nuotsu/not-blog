@@ -3,8 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
 	::selection {
 		@apply bg-black text-white;
+	}
+
+	:target {
+		scroll-margin-top: var(--header-height);
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		text-wrap: balance;
 	}
 }
 
