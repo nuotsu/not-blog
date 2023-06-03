@@ -4,13 +4,15 @@
 >
 	<h1>
 		<a href="/" class="group flex items-center gap-3">
-			<i class="inline-block scale-150 not-italic">🤷‍♂️</i>
+			<Logo/>
 			<span class="group-hover:link">The Artificial Blog</span>
 		</a>
 	</h1>
 </header>
 
 <script lang="ts">
+	import Logo from './Logo.svelte'
+
 	let elem: HTMLElement
 
 	$: {
