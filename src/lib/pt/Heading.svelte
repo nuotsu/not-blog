@@ -5,11 +5,11 @@
 </svelte:element>
 
 <style lang="postcss">
-	h1 { @apply text-3xl font-bold; }
-	h2 { @apply text-2xl font-bold; }
-	h3 { @apply text-xl font-bold; }
-	h4 { @apply text-lg font-bold; }
-	h5,h6 { @apply font-bold; }
+	h1 { @apply font-serif text-3xl; }
+	h2 { @apply font-serif text-2xl; }
+	h3 { @apply font-serif text-xl; }
+	h4 { @apply font-serif text-lg; }
+	h5,h6 { @apply font-serif; }
 
 	:is(h1,h2,h3,h4,h5,h6):not(:hover) a {
 		display: none;

@@ -1,7 +1,7 @@
 <svelte:document on:scroll={onscroll} />
 
 <i
-	class="relative inline-block scale-150 not-italic leading-none"
+	class="relative inline-block scale-150 not-italic"
 	data-content={content}
 	style:--progress="{progress}%"
 >
@@ -32,7 +32,7 @@
 
 	let progress = 0
 
-	const enableProgress = $page.route.id === '/blog/[slug]'
+	$: enableProgress = $page.route.id === '/blog/[slug]'
 
 	function onscroll(e: Event) {
 		if (!enableProgress) return

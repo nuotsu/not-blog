@@ -18,7 +18,7 @@
 
 	<div class="grid gap-4 py-12 px-4 max-w-screen-md mx-auto">
 		<header class="grid gap-4 mb-4">
-			<h1 class="text-3xl font-bold">{post.metadata.title}</h1>
+			<h1 class="font-serif text-5xl">{post.metadata.title}</h1>
 
 			<p class="text-xs">
 				<a class="hover:link" href="/?category={post.category.slug.current}">
@@ -36,7 +36,7 @@
 			</p>
 		</header>
 
-		<div class="grid gap-[1em]">
+		<div class="content grid gap-[1em] leading-relaxed">
 			<PortableText
 				value={post.content}
 				components={{
@@ -57,6 +57,12 @@
 		</div>
 	</div>
 </article>
+
+<style lang="postcss">
+	.content > :global(p:first-of-type::first-letter) {
+		@apply font-serif text-7xl;
+	}
+</style>
 
 <script lang="ts">
 	import Img from '$lib/Img.svelte'

@@ -3,6 +3,10 @@ export default {
 	content: ['./src/**/*.{html,svelte}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: `'TASA Orbital', san-serif`,
+				serif: `'Instrument', serif`,
+			},
 			screens: {
 				'xs': { min: '480px' },
 				'<xs': { max: '479px' },

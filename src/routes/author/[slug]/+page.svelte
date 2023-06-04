@@ -1,5 +1,5 @@
 <header class="grow flex items-center justify-center py-12 px-4">
-	<h1 class="text-xl">{author.name}</h1>
+	<h1 class="font-serif text-4xl">{author.name}</h1>
 </header>
 
 <PostList {posts} />

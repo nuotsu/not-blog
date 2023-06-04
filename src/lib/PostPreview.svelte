@@ -13,7 +13,7 @@
 
 	<div class="grid gap-2 py-2 px-4 my-auto">
 		<p class="text-xs">{post.category.name}</p>
-		<h2 class="leading-snug group-hover:link">{post.metadata.title}</h2>
+		<h2 class="font-serif text-lg leading-snug group-hover:link">{post.metadata.title}</h2>
 		<p class="text-xs">
 			<Date date={post.date} />
 		</p>

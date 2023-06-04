@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Instrument';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url(/fonts/InstrumentSerif-Regular.woff2);
+}
+@font-face {
+	font-family: 'Instrument';
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+	src: url(/fonts/InstrumentSerif-Italic.woff2);
+}
+
+@font-face {
+	font-family: 'TASA Orbital';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url(/fonts/TASAOrbiterVF.woff2);
+}
