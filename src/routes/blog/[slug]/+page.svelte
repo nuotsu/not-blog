@@ -6,9 +6,9 @@
 <article>
 	{#if post.metadata.image}
 		<figure>
-			<img
+			<Img
 				class="w-full max-h-[60vh] object-cover"
-				src={urlFor(post.metadata.image)?.url()}
+				image={post.metadata.image}
 				alt={post.metadata.title}
 				loading="eager"
 				draggable={false}
@@ -49,6 +49,7 @@
 						link: Link,
 					},
 					types: {
+						image: Image,
 						cta: CTA,
 					}
 				}}
@@ -58,12 +59,13 @@
 </article>
 
 <script lang="ts">
-	import { urlFor } from '$utils/sanity.js'
+	import Img from '$lib/Img.svelte'
 	import Date from '$lib/Date.svelte'
 	import { PortableText } from '@portabletext/svelte'
 	import Heading from '$lib/pt/Heading.svelte'
 	import Quote from '$lib/pt/Quote.svelte'
 	import Link from '$lib/pt/Link.svelte'
+	import Image from '$lib/pt/Image.svelte'
 	import CTA from '$lib/pt/CTA.svelte'
 
 	export let data

@@ -1,10 +1,11 @@
 <a class="group h-full flex flex-col" href="/blog/{post.metadata.slug.current}">
 	{#if post.metadata.image}
 		<figure>
-			<img
-				src={urlFor(post.metadata.image)?.height(300).url()}
+			<Img
+				class="aspect-[1.7] w-full object-cover"
+				image={post.metadata.image}
+				builder={i => i.height(300)}
 				alt={post.metadata.title}
-				loading="lazy"
 				draggable={false}
 			/>
 		</figure>
@@ -19,17 +20,9 @@
 	</div>
 </a>
 
-<style>
-	figure :global(img) {
-		width: 100%;
-		aspect-ratio: 1.7;
-		object-fit: cover;
-	}
-</style>
-
 <script lang="ts">
 	import Date from '$lib/Date.svelte'
-	import { urlFor } from '$utils/sanity'
+	import Img from './Img.svelte'
 
 	export let post: Sanity.BlogPost
 </script>
