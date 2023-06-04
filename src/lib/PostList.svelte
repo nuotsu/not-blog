@@ -1,6 +1,6 @@
 <ul class="grid gap-px items-stretch pt-px bg-current">
-	{#each posts as post}
-		<li class="bg-white">
+	{#each posts as post, i (post._id + i)}
+		<li class="bg-white" style:--delay={i}>
 			<PostPreview {post} />
 		</li>
 	{/each}
@@ -15,6 +15,18 @@
 <style>
 	ul {
 		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	}
+
+	li {
+		animation: zoom .2s ease-in-out calc(var(--delay, 0) * 0.03s) forwards;
+		opacity: .5;
+		scale: .9;
+	}
+	@keyframes zoom {
+		to {
+			opacity: 1;
+			scale: 1;
+		}
 	}
 
 	span {
