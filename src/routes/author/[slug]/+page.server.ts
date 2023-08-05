@@ -11,7 +11,7 @@ export const load = (async ({ params }) => {
 		posts: Sanity.BlogPost[]
 	}>(groq`{
 		'author': *[_type == 'blog.author' && slug.current == $slug][0],
-		'posts': *[_type == 'blog.post' && author->slug.current == $slug]{
+		'posts': *[_type == 'blog.post' && author->slug.current == $slug]|order(date desc){
 			category->,
 			date,
 			metadata
