@@ -26,17 +26,11 @@
 </style>
 
 <script lang="ts">
-	import { page } from '$app/stores'
-
 	export let content: string = '🤷‍♂️'
 
 	let progress = 0
 
-	$: enableProgress = $page.route.id === '/blog/[slug]'
-
 	function onscroll(e: Event) {
-		if (!enableProgress) return
-
 		const { documentElement } = e.target as Document
 		progress = documentElement.scrollTop / (documentElement.scrollHeight - window.innerHeight) * 100
 	}
