@@ -51,6 +51,7 @@
 					types: {
 						image: Image,
 						cta: CTA,
+						'horizontal-rule': HorizontalRule,
 					}
 				}}
 			/>
@@ -73,6 +74,7 @@
 	import Link from '$lib/pt/Link.svelte'
 	import Image from '$lib/pt/Image.svelte'
 	import CTA from '$lib/pt/CTA.svelte'
+	import HorizontalRule from '$lib/pt/HorizontalRule.svelte'
 
 	export let data
 

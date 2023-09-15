@@ -28,6 +28,7 @@ export default defineType({
 					]
 				},
 				{ type: 'cta' },
+				{ type: 'horizontal-rule' },
 			],
 		}),
 		defineField({

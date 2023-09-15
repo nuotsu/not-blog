@@ -16,13 +16,13 @@ export default defineType({
 		defineField({
 			name: 'title',
 			type: 'string',
-			validation: (Rule) => Rule.max(60).required(),
+			validation: (Rule) => Rule.max(60).warning(),
 		}),
 		defineField({
 			name: 'description',
 			type: 'text',
 			rows: 3,
-			validation: (Rule) => Rule.max(160).required(),
+			validation: (Rule) => Rule.max(160).warning(),
 		}),
 		defineField({
 			name: 'image',

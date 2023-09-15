@@ -6,6 +6,7 @@ import blogCategory from './documents/blog.category'
 
 // objects
 import cta from './objects/cta'
+import horizontalRule from './objects/horizontal-rule'
 import metadata from './objects/metadata'
 
 export const schemaTypes = [
@@ -17,5 +18,6 @@ export const schemaTypes = [
 
 	// objects
 	cta,
+	horizontalRule,
 	metadata,
 ]
