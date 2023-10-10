@@ -1,6 +1,7 @@
 <svelte:head>
 	<title>{data.site.name}</title>
 	<meta name="description" content={data.site.description}>
+	<link rel="alternate" type="application/rss+xml" href="/rss.xml" />
 
 	{#if !dev}
 		<!-- Google tag (gtag.js) -->

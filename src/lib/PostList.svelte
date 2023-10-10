@@ -1,4 +1,4 @@
-<ul class="grid gap-px <md:gap-y-1 items-stretch pt-px bg-current">
+<ul class="grid gap-x-px gap-y-1 <md:gap-y-3 items-stretch pt-px bg-current">
 	{#each posts as post, i (post._id + i)}
 		<li class="bg-white" style:--delay={i}>
 			<PostPreview {post} />
